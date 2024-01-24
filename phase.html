@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Tracking System</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #e6ecf0; /* Light grayish blue background */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    header {
+      background-color: #3498db; /* Flat blue color */
+      font-weight: bold;
+      padding: 10px;
+      text-align: center;
+      color: #fff;
+      font-size: 38px;
+      width: 100%;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    header img {
+      width: 250px; /* Adjust the width of the logo */
+      height: 150px; /* Adjust the height of the logo */
+    }
+
+    section {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      width: 500px;
+      text-align: center;
+      margin-top: 100px; /* Add margin at the top to create a gap */
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-color: #000;
+      padding: 20px;
+      margin-top:50px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: #555;
+    }
+
+    select,
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      box-sizing: border-box;
+      border: 1px solid #000;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+
+    button {
+      background-color: #4caf50;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    select,input{
+        width:100%;
+        padding:10px;
+        margin-bottom:20px;
+        box-sizing:border-box;
+        border:1px solid #ccc;
+        border-radius:4px;
+        font-size:16px;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <img src="C:/Users/User/Downloads/logo.jpg" alt="MK SRINIVASAN SYSTEMS PRIVATE LIMITED">
+    <div style="flex-grow:1.5;">MK SRINIVASAN SYSTEMS PRIVATE LIMITED</div>
+  </header>
+  <section>
+    <h1>Product Tracking System</h1>
+
+    <form>
+        <label for="phase">Select Phase:</label>
+      <select id="phase" name="phase">
+        <option value="Reception">Reception</option>
+        <option value="Evaluation">Evaluation</option>
+        <option value="Quotation">Quotation</option>
+        <option value="ServiceInProgress">Service in Progress</option>
+        <option value="Calibration">Calibration</option>
+        <option value="Packing">Packing</option>
+        <option value="Delivery">Delivery</option>
+      </select>
+
+      <div id="quotationDetails" style="display: none;">
+        <label for="quotationNo">Quotation No:</label>
+        <input type="text" id="quotationNo" name="quotationNo" placeholder="Enter Quotation No">
+
+        <label for="quotationDate">Quotation Date:</label>
+        <input type="date" id="quotationDate" name="quotationDate">
+      </div>
+
+      <div id="deliveryOptions" style="display: none;">
+        <label for="deliveryType">Select Delivery Type:</label>
+        <select id="deliveryType" name="deliveryType">
+          <option value="courier">Courier</option>
+          <option value="hand_carry">Hand Carry</option>
+        </select>
+
+        <div id="courierDetails" style="display: none;">
+          <label for="courierLR">Courier LR Copy:</label>
+          <input type="file" id="courierLR" name="courierLR">
+        </div>
+
+        <div id="handCarryDetails" style="display: none;">
+          <label for="person">Person Details:</label>
+          <input type="text" id="person" name="person" placeholder="Enter person details">
+        </div>
+      </div>
+
+      <button type="button" onclick="submitForm()">Submit</button>
+      <!-- Your existing form content -->
+      <!-- ... -->
+    </form>
+  </section>
+
+  <script>
+    document.getElementById('phase').addEventListener('change', function () {
+      var quotationDetails = document.getElementById('quotationDetails');
+      var deliveryOptions = document.getElementById('deliveryOptions');
+      var courierDetails = document.getElementById('courierDetails');
+      var handCarryDetails = document.getElementById('handCarryDetails');
+
+      quotationDetails.style.display = 'none';
+      deliveryOptions.style.display = 'none';
+      courierDetails.style.display = 'none';
+      handCarryDetails.style.display = 'none';
+      
+      if (this.value === 'Quotation') {
+        quotationDetails.style.display = 'block';
+      } else if (this.value === 'Delivery') {
+        deliveryOptions.style.display = 'block';
+      }
+    });
+    document.getElementById('deliveryType').addEventListener('change', function () {
+      var courierDetails = document.getElementById('courierDetails');
+      var handCarryDetails = document.getElementById('handCarryDetails');
+
+      courierDetails.style.display = this.value === 'courier' ? 'block' : 'none';
+      handCarryDetails.style.display = this.value === 'hand_carry' ? 'block' : 'none';
+    });
+
+    function submitForm() {
+      // Add your form submission logic here
+      alert('Form submitted!');
+    }
+    // Your existing script
+    // ...
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Your Company Name</title>
+    <!-- Add your CSS styles here -->
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color:#fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-image: url('C:/Users/User/OneDrive/Pictures/Screenshots/Screenshot (2).png');
+            background-size: cover; /* Make the background image cover the entire background */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 1.5);
+        }
+
+        .login-container{
+            background-color:#fff;
+            border-radius:10px;
+            border-color: #000000;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            text-align:center;
+            padding:40px;
+            width:400px;
+            box-sizing:border-box;
+        }
+
+        .login-container h2 {
+            color: #000000;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            color: #000000;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .form-group button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .form-group button:hover {
+            background-color: #45a049;
+        }
+
+        .signup-link {
+            color: #3498db;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .signup-link:hover {
+            text-decoration: underline;
+        }
+        .toll-free {
+            position: fixed;
+            bottom: 25px;
+            right: 10px;
+            text-align: right;
+            color: #ff0000;
+            font-size: 25px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    
+
+<div class="login-container">
+    <h2>Login to Your Account</h2>
+    <form action="login.php" method="post">
+        <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <div class="form-group">
+            <button type="submit">Login</button>
+        </div>
+    </form>
+    <p>Don't have an account? <a href="#" class="signup-link">Sign up here</a>.</p>
+    
+</div>
+<div class="toll-free">
+    <p>CONTACT: +91 (800) 2344 9185</p>
+    <p>EMAIL:info@taurusmks.com</p>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,375 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M K Srinivasan Systems Private Limited</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #ffffff; /* Light grayish blue background */
+          
+        }
+       
+        header {
+            background-color: #3498db; /* Flat blue color */
+            font-weight: bold;
+            padding: 10px;
+            text-align: center;
+            color: #fff;
+            font-size: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        header img {
+            width: 250px; /* Adjust the width of the logo */
+            height: 150px; /* Adjust the height of the logo */
+        }
+
+        #search-bar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        #search-input {
+            width: 200px;
+            padding: 8px;
+            border: 1px solid #95a5a6; /* Medium gray border */
+            border-radius: 4px 0 0 4px;
+        }
+
+        #search-button {
+            padding: 8px 15px;
+            background-color: #000880; /* Flat blue color */
+            color: #fff;
+            border: 1px solid #3498db; /* Flat blue color */
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+        }
+
+        #highlighted-title {
+            text-align: center;
+            font-size: 30px; /* Increased font size */
+            color: #000880; /* Highlighted color */
+            font-weight: bold; /* Bold text */
+            margin-bottom: 20px;
+        }
+
+        #product-dropdown-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 50px;
+            font-size: 18px; /* Adjusted font size */
+        }
+
+        #product-select {
+            width: 300px;
+            padding: 10px;
+            font-size:20px;
+            border: 2px solid #3498db;
+            border-radius: 4px;
+            background-color: #fff;
+            color: #000880;
+            font-weight: bold;
+            margin-left: 30px; /* Increased space between product name and dropdown */
+        }
+
+        #product-select:focus {
+            outline: none;
+            border-color: #000880;
+            box-shadow: 0 0 10px rgba(0, 8, 128, 0.2);
+        }
+
+        .product-container {
+            display: flex;
+            justify-content: space-around;
+            padding: 40px;
+            flex-wrap: wrap;
+            width: 100%; /* Set the width as desired */
+            margin: 0 auto;
+        }
+
+        .product-column {
+            display: none;
+            flex: 0 0 calc(33.33% - 20px);
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            transition: transform 0.3s ease;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            border: 5px solid #3498db;
+        }
+
+        .product-column.active {
+            display: flex;
+        }
+
+        .product-column:hover {
+            transform: scale(1.05);
+        }
+
+        .product-img {
+            width: 40%;
+            max-width: 100%;
+            min-height: 10px;
+            border-radius: 8px;
+            margin-bottom: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border: 2px solid #3498db;
+        }
+
+        .accessories-heading {
+            font-size: 18px;
+            color: #000880;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .accessory {
+            display: flex;
+            align-items: center;
+            border: 2px solid #3498db;
+            border-radius: 8px;
+            padding: 10px;
+            margin-bottom: 10px;
+            width: 100%;
+        }
+
+        .accessory img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .accessory-details {
+            flex-grow: 1;
+        }
+
+        h2, h3 {
+            color: #2c3e50;
+        }
+
+        input {
+            width: 40px;
+            padding: 5px;
+            border: 1px solid #95a5a6;
+            border-radius: 4px;
+            text-align: center;
+            margin-top: 5px;
+            transition: border-color 0.3s ease;
+        }
+
+        input:hover,
+        input:focus {
+            border-color: #3498db;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="C:/Users/User/Downloads/logo.jpg" alt="MK SRINIVASAN SYSTEMS PRIVATE LIMITED">
+        <div style="flex-grow: 1.5;">MK SRINIVASAN SYSTEMS PRIVATE LIMITED</div>
+    </header>
+
+    <div id="search-bar">
+        <input type="text" id="search-input" placeholder="Search for serial number">
+        <button id="search-button">Search</button>
+    </div>
+
+    <div id="highlighted-title">
+       DC EARTH FAULT LOCATOR
+    </div>
+
+    <div id="product-dropdown-container">
+        <label for="product-select">Select a Product:</label>
+        <select id="product-select" class="large-dropdown">
+            <option value="TFR-73hf">DC 361</option>
+            <option value="TFR-54hf">DC 361P</option>
+            <option value="Another-Product">DC 451P</option>
+        </select>
+    </div>
+
+    <div class="product-container">
+        <!-- Product 1 -->
+        <div class="product-column" id="product1">
+            <h2>DC 361</h2>
+            <img class="product-img" src="C:/Users/User/Downloads/DC361p.jpg" alt="DC-361">
+            <div class="accessories-heading">Accessories</div>
+            <div class="accessory">
+                <img src="accessory1.jpg" alt="Accessory 1">
+                <div class="accessory-details">
+                    <h3>Accessory 1</h3>
+                    <input type="number" placeholder="Qty">
+                </div>
+            </div>
+            <div class="accessory">
+                <img src="accessory1.jpg" alt="Accessory 1">
+                <div class="accessory-details">
+                    <h3>Accessory 1</h3>
+                    <input type="number" placeholder="Qty">
+                </div>
+            </div>
+            <div class="accessory">
+                <img src="accessory1.jpg" alt="Accessory 1">
+                <div class="accessory-details">
+                    <h3>Accessory 1</h3>
+                    <input type="number" placeholder="Qty">
+                </div>
+            </div>
+            <div class="accessory">
+                <img src="accessory1.jpg" alt="Accessory 1">
+                <div class="accessory-details">
+                    <h3>Accessory 1</h3>
+                    <input type="number" placeholder="Qty">
+                </div>
+            </div>
+            <div class="accessory">
+                <img src="accessory1.jpg" alt="Accessory 1">
+                <div class="accessory-details">
+                    <h3>Accessory 1</h3>
+                    <input type="number" placeholder="Qty">
+                </div>
+            </div>
+            <!-- Add more accessories as needed -->
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product-column" id="product2">
+            <h2>DC 361P</h2>
+            <img class="product-img" src="C:/Users/User/Downloads/DC361p.jpg" alt="DC-361P">
+            <div class="accessories-heading">Accessories</div>
+            <div class="accessory">
+                <img src="accessory3.jpg" alt="Accessory 3">
+                <div class="accessory-details">
+                    <h3>Accessory 3</h3>
+                    <input type="number" placeholder="Qty">
+                </div>
+            </div>
+            <div class="accessory">
+                <img src="accessory1.jpg" alt="Accessory 1">
+                <div class="accessory-details">
+                    <h3>Accessory 1</h3>
+                    <input type="number" placeholder="Qty">
+                </div>
+            </div>
+            <div class="accessory">
+                <img src="accessory1.jpg" alt="Accessory 1">
+                <div class="accessory-details">
+                    <h3>Accessory 1</h3>
+                    <input type="number" placeholder="Qty">
+                </div>
+            </div>
+            <div class="accessory">
+                <img src="accessory1.jpg" alt="Accessory 1">
+                <div class="accessory-details">
+                    <h3>Accessory 1</h3>
+                    <input type="number" placeholder="Qty">
+                </div>
+            </div>
+            <div class="accessory">
+                <img src="accessory1.jpg" alt="Accessory 1">
+                <div class="accessory-details">
+                    <h3>Accessory 1</h3>
+                    <input type="number" placeholder="Qty">
+                </div>
+            </div>
+            <!-- Add more accessories as needed -->
+        </div>
+
+        <!-- Product 3 -->
+        <div class="product-column" id="product3">
+            <h2>DC 451P</h2>
+            <img class="product-img" src="C:/Users/User/Downloads/dc451.jpg" alt="DC-451P">
+            <div class="accessories-heading">Accessories</div>
+            <div class="accessory">
+                <img src="accessory4.jpg" alt="Accessory 4">
+                <div class="accessory-details">
+                    <h3>Accessory 4</h3>
+                    <input type="number" placeholder="Qty">
+                </div>
+            </div>
+            <div class="accessory">
+                <img src="accessory1.jpg" alt="Accessory 1">
+                <div class="accessory-details">
+                    <h3>Accessory 1</h3>
+                    <input type="number" placeholder="Qty">
+                </div>
+            </div>
+            <div class="accessory">
+                <img src="accessory1.jpg" alt="Accessory 1">
+                <div class="accessory-details">
+                    <h3>Accessory 1</h3>
+                    <input type="number" placeholder="Qty">
+                </div>
+            </div>
+            <div class="accessory">
+                <img src="accessory1.jpg" alt="Accessory 1">
+                <div class="accessory-details">
+                    <h3>Accessory 1</h3>
+                    <input type="number" placeholder="Qty">
+                </div>
+            </div>
+            <div class="accessory">
+                <img src="accessory1.jpg" alt="Accessory 1">
+                <div class="accessory-details">
+                    <h3>Accessory 1</h3>
+                    <input type="number" placeholder="Qty">
+                </div>
+            </div>
+            <div class="accessory">
+                <img src="accessory1.jpg" alt="Accessory 1">
+                <div class="accessory-details">
+                    <h3>Accessory 1</h3>
+                    <input type="number" placeholder="Qty">
+                </div>
+            </div>
+            <!-- Add more accessories as needed -->
+        </div>
+    </div>
+
+    <script>
+        // JavaScript to handle product dropdown
+        const productDropdown = document.getElementById('product-select');
+        const product1 = document.getElementById('product1');
+        const product2 = document.getElementById('product2');
+        const product3 = document.getElementById('product3');
+
+        productDropdown.addEventListener('change', function () {
+            const selectedProduct = productDropdown.value;
+
+            // Hide all product columns
+            product1.classList.remove('active');
+            product2.classList.remove('active');
+            product3.classList.remove('active');
+
+            // Show the selected product column
+            if (selectedProduct === 'TFR-73hf') {
+                product1.classList.add('active');
+            } else if (selectedProduct === 'TFR-54hf') {
+                product2.classList.add('active');
+            } else if (selectedProduct === 'Another-Product') {
+                product3.classList.add('active');
+            }
+        });
+    </script>
+
+</body>
+</html>
